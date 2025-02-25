@@ -24,7 +24,7 @@ public class Main {
       
     Scanner scan = new Scanner(System.in);
         String marca, serial, tamaño, color;
-        String nombre, apellido, cedula, direccion;
+        String nombre, apellido, cedula, direccion, id;
         int rta, conteo, opc=0, num_pcs;
         
         
@@ -39,7 +39,8 @@ public class Main {
         {
             System.out.println("1. Registar Persona");
             System.out.println("2. Mostrar Persona");
-            System.out.println("3. Salir");
+            System.out.println("3. Buscar id");
+            System.out.println("4. Salir");
             
             System.out.println("Digite una opcion valida");
             opc= scan.nextInt();
@@ -234,11 +235,15 @@ public class Main {
                     HelperImpresion.ImprimirInfo(listapersona);
                 break;
                 case 3:
+                    scan.nextLine();
+                    System.out.println("Digite el id a buscar");
+                    id = scan.nextLine();
+                    HelperImpresion.buscarPersona(id, listapersona);
                 break;
             }
             
             
-        }while(opc!=3);
+        }while(opc!=4);
         
         
        
